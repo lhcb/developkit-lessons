@@ -1,29 +1,27 @@
 language: node_js
 node_js:
-  - "node"
+- node
 addons:
   apt:
     packages:
     - calibre
     - calibre-bin
 before_install:
-  - npm install gitbook-cli -g
+- npm install gitbook-cli -g
 install:
-  - gitbook install
-  - npm install svgexport -g
-# Using xvfb to Run Tests That Require a GUI
-# https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
+- gitbook install
+- npm install svgexport -g
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
 script:
-  - gitbook pdf
-  - cp book.pdf starterkit-lessons.pdf
-  - gitbook build
-# With instructions from http://www.steveklabnik.com/automatically_update_github_pages_with_travis_example/
+- gitbook pdf
+- cp book.pdf developkit-lessons.pdf
+- gitbook build
 after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
+  deploy.sh
 env:
   global:
-    - secure: u2cXfS9DzeKaSRqV2X12aNzLtCdk/DIvV6BbEbqwmOFjRcUfDXTty+tU9Huz9gS1QchlNYO6rQDPi/t4XkaMrX2BI+PY0ehKRM9LsUm/KmVNqjXQdeoynu2apPQ9HR0M2HKF9d/a1PHRiEXSV7UeUUbPUrvjsy4Cxz9XZB5FM43XDxW+IAhOYhMqdirknYcPS/NsHb21PRkVED8nwgRZuX7igiB2X/i797ngq9fmxQg2jBGQHQLaSqBgO9LIjIP1EshuoyZA3z1YBsCgRtEv4xds7jJJs84/bO21N0t40wU27yI1tu8P4hR17dDGwo9mJo2z7pOG1Qdt0vxajUw+YHwGWkjtY7AliHIYJ9Xdwqe8b5kUBpzg3yHmoV8gXQV7WMHxv7za44hmlfrpry0GwEtNNUjRvbrymOh/FwfQaONpzi/b0kZnydxehe81KsUhqK1d/HVWcCDbf6iVO5sDRfddeQQPdRhf2xFbBCMdEtrMQqaf/eNmobVKDNB0wnsN1cYxa/8U5IQnNdwry8k7uQ+mQsRJXF1qXtzu4EKoCdFe3HHbWsZyBBwiD7HWVpeatJj9JpvTfIxgpmtW0Ll40A7CVvrdoqz+pI3u8aH8IzOzewq2a/oCNwNL2x6jSL19BeOp31jh8Ow9TwmOcpB6FF7TxqLCAY04Iwz02cTygr0=
+    secure: dV6E4Do+YxYBXtmYLt6moEIXiEtGgSoLjdfKi5b9sGotvzMkL5lMujcrl6/+fZqis4SqaB2VglvgJkoS6I1x1htneNcWK0a0QEe+E1BlIMpAniVQf6lYPzwN+zdx5+CkBg8UXPh90cOZNwkcGExS0D/zhNRzPcbtBIhuVuF1y1EaxgeMGATT4mryZfUelnuOvby9t/5RWhfSbgxKaN8IVrm/ZDIjtjs8T926Mn5HcWoKdt+DSKf0dEEGPdTDV2h2X9chwBJVVKd0cGFuAiVNT0kkgw0mxtrQxmw83I85xTgC8pzd5sDQ+rBv7ezdAOwlQlECCwozadrVu2jx6N4xcHlYcRN9qZr0zNK1qbfSdd+XNn+sEOBdS+X6uA9DO1+DcHh2JHMbpixnm+SB5WTYDg6ApUm2bxe2RRUYu2JYiLgfif0b/pxaoOdnH8wUYZTaB9xuEIkE5YbzeTVaj4AoLLVZslMKwAvZ7zh3xTLwADujMDL/6ilachlZ051toe+qbJ7/S5NNkeJoEZN9YeNsLLN+JNxICdB/kt0WpYiH3bahyhvz0We5WpC4Q1+Ptp5uXqIqxwKfcpF8CqwpGZjZ1/MDs11XXTfBMpLXxpjEfjWyg2CO5RxUkT6/SCZMlfka1dsYYLbg22Xqz/OPFauAmYNYQCDi29acNy89X5oY7hw=

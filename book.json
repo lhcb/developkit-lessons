@@ -4,8 +4,8 @@
     "-sharing",
     "panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master",
     "katex-auto-render@git+https://github.com/lhcb/gitbook-plugin-katex-auto-render.git#master",
-    "term",
     "collapsible-menu",
-    "otherlink"
+    "otherlink",
+    "term"
   ]
 }
