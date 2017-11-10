@@ -13,6 +13,10 @@
 
 ----
 
+* [First computing steps](https://lhcb.github.io/analysis-essentials/)
+
+----
+
 * [First development steps](first-development-steps/README.md)
     * [Setting up a development environment](first-development-steps/01-intro.md)
       * [Setting up a CernVM](first-development-steps/01a-cernvm.md)
