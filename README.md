@@ -1,10 +1,5 @@
-# The LHCb Starterkit lessons [![Build Status](https://travis-ci.org/lhcb/starterkit-lessons.svg?branch=master)](https://travis-ci.org/lhcb/starterkit-lessons)
+# The LHCb Developkit lessons [![Build Status](https://travis-ci.org/lhcb/developer-lessons.svg?branch=master)](https://travis-ci.org/lhcb/developer-lessons)
 
-These are the lessons taught during the [LHCb Starterkit][starterkit]. If 
-you'd like to join the next workshop, visit [the website][starterkit] to find 
-out when that will how and how to sign up.
+These are the lessons taught during the [LHCb Developkitkit][developkit].
 
-If you'd just like to learn about how to use the LHCb software, [read
-on](first-analysis-steps)!
-
-[starterkit]: https://lhcb.github.io/starterkit
+[developkit]: https://lhcb.github.io/developer-lessons
