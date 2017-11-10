@@ -1,0 +1,832 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>C++ performance · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="The Starterkit team and contributors">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-auto-render/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-term/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06b-python.html" />
+    
+    
+    <link rel="prev" href="05d-cppfuture.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    The LHCb Starterkit
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../CONTRIBUTING.html">
+            
+                <a href="../CONTRIBUTING.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://lhcb.github.io/starterkit-lessons/first-analysis-steps/">
+            
+                    
+                    First analysis steps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <a target="_blank" href="https://lhcb.github.io/starterkit-lessons/second-analysis-steps/">
+            
+                    
+                    Second analysis steps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    First development steps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="01-intro.html">
+            
+                <a href="01-intro.html">
+            
+                    
+                    Setting up a development environment
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1.1" data-path="01a-cernvm.html">
+            
+                <a href="01a-cernvm.html">
+            
+                    
+                    Setting up a CernVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.1.2" data-path="01b-docker.html">
+            
+                <a href="01b-docker.html">
+            
+                    
+                    Setting up with Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.1.3" data-path="01c-centos.html">
+            
+                <a href="01c-centos.html">
+            
+                    
+                    Setting up CentOS 7
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="01-git.html">
+            
+                <a href="01-git.html">
+            
+                    
+                    Git for LHCb
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.1" data-path="01d-setupsimple.html">
+            
+                <a href="01d-setupsimple.html">
+            
+                    
+                    LB git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2" data-path="01e-setupcomplete.html">
+            
+                <a href="01e-setupcomplete.html">
+            
+                    
+                    Pure git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="01f-building.html">
+            
+                <a href="01f-building.html">
+            
+                    
+                    Building LHCb software
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="01g-testing.html">
+            
+                <a href="01g-testing.html">
+            
+                    
+                    Testing and examples in LHCb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="02a-gaudi-helloworld.html">
+            
+                <a href="02a-gaudi-helloworld.html">
+            
+                    
+                    Hello World in the Gaudi Framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="02b-gaudi-intro.html">
+            
+                <a href="02b-gaudi-intro.html">
+            
+                    
+                    Intro to the Gaudi Framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="03a-gaudi.html">
+            
+                <a href="03a-gaudi.html">
+            
+                    
+                    The Gaudi Framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.8" data-path="03b-upgrading.html">
+            
+                <a href="03b-upgrading.html">
+            
+                    
+                    Upgrading algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="05-cpp.html">
+            
+                <a href="05-cpp.html">
+            
+                    
+                    What's new in C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.9.1" data-path="05a-cpp11.html">
+            
+                <a href="05a-cpp11.html">
+            
+                    
+                    What's new in C++11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.2" data-path="05b-cpp14.html">
+            
+                <a href="05b-cpp14.html">
+            
+                    
+                    What's new in C++14
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.3" data-path="05c-cpp17.html">
+            
+                <a href="05c-cpp17.html">
+            
+                    
+                    What's new in C++17
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.4" data-path="05d-cppfuture.html">
+            
+                <a href="05d-cppfuture.html">
+            
+                    
+                    Prospects in C++'s future
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.1.10" data-path="06a-perf.html">
+            
+                <a href="06a-perf.html">
+            
+                    
+                    C++ performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.11" data-path="06b-python.html">
+            
+                <a href="06b-python.html">
+            
+                    
+                    Python in the upgrade era
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <a target="_blank" href="ref://developkit-lessons.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >C++ performance</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="c-performance">&quot;C++ Performance&quot;</h1>
+<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9333086440);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-9333086440"></span></h3></div><div class="panel-body" id="panel-9333086440"><ul>
+<li>&quot;Learn about fast coding.&quot;</li>
+</ul>
+</div></div></p>
+<h1 id="optimizing-code">Optimizing code</h1>
+<p>One of the goals of coding is to make clean, clear code that closely matches the intent of the user, both in language and syntax. Really, almost all languages and features are truly optional; programs could technically be written with a tiny subset of any modern computing language. The point of classes, exceptions, structures, and the like is to make code match intent in a manor obvious to the user. Another goal of writing code is to be able to use one piece of code in multiple cases, avoiding rewriting or maintaining multiple copies. A related goal is to be able to create it quickly with minimal hassle.</p>
+<p>Optimization may seem to be exactly the opposite of these goals, obfuscating your original intent, making performant versions for each use case, and extending the work needed to create the code; but when carefully performed, optimization can have a minimal impact in these. There are several key points to take away:</p>
+<h2 id="know-where-your-code-is-taking-time">Know where your code is taking time</h2>
+<p>This is key; most algorithms have a bottleneck somewhere; it&apos;s been said that 1% of your code tend to take 99% of the time. It is important to <strong>profile</strong> your code to understand where time is being spent. Only optimize the portions that take the most time; it is not worth the impact to readability to optimize something that takes less than 5% of the total time.</p>
+<p>There are simple tools for profiling, as well as complex. The obvious manual methods, using <code>std::chrono::high_resolution_clock::now()</code> and printing times, might be faster for a single use, but in the long run will take far more of your time than learning a profiler.</p>
+<p>The following are three common classes of profilers.</p>
+<h3 id="code-insertion">Code insertion</h3>
+<p>These modify the execution of the program, such as <code>callgrind</code>. This causes your program to run much slower, and
+can affect the proportion of time spent in calls. Small calls or IO tend to be heavily impacted by using these tools.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7162104451);" id="example-of-callgrindclick-to-expand"><i class="fa fa-bell"></i> Example of callgrind<span id="heading-7162104451">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7162104451"><p>The following example shows the procedure for obtaining a graphical result of the time spent in each portion of your program:</p>
+<pre><code class="lang-term"><pre class="term t-default t-fade"><button class="btn t-copy" data-clipboard-text="g++ -g -O2 -std=c++11 -pedantic -Wall -Wextra my_program.cpp -o my_program
+valgrind -tool=callgrind -dump-instr=yes -collect -jumps=yes -cache -sim=yes -branch-sim=yes ./my_program
+kcachegrind"><svg class="octicon octicon-clippy" viewbox="0 0 14 16" version="1.1" width="14" height="14" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></button><span class="t-line t-prompt-line"><span class="t-prompt">local</span><span class="t-pathsep">:</span><span class="t-path">build </span><span class="t-delimiter">$ </span><span class="t-command">g++ -g -O2 -std=c++11 -pedantic -Wall -Wextra my_program.cpp -o my_program</span>
+</span><span class="t-line t-prompt-line"><span class="t-prompt">local</span><span class="t-pathsep">:</span><span class="t-path">build </span><span class="t-delimiter">$ </span><span class="t-command">valgrind -tool=callgrind -dump-instr=yes -collect -jumps=yes -cache -sim=yes -branch-sim=yes ./my_program</span>
+</span><span class="t-line t-prompt-line"><span class="t-prompt">local</span><span class="t-pathsep">:</span><span class="t-path">build </span><span class="t-delimiter">$ </span><span class="t-command">kcachegrind</span>
+</span></pre></code></pre>
+</div></div></p>
+<h3 id="stack-sampling-profilers">Stack sampling profilers</h3>
+<p>These sample the program stack during execution (<code>gprof</code>, <code>google-perftools</code>, <code>igprof</code>), providing minimal changes to the runtime of the program. These trade knoledge of every call for a representation of a normal run.</p>
+<h2 id="examples-of-sample-profiling">Examples of sample profiling</h2>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7607380095);" id="examples-of-sample-profilingclick-to-expand"><i class="fa fa-bell"></i> Examples of sample profiling<span id="heading-7607380095">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7607380095"><p>To use, you&apos;ll want the compiler to add profile info (<code>-pg</code>) and optionally debug info (<code>-g</code>). You also may want the compiler to avoid inline functions (<code>-fno-inline</code>). The binary can now be run through gprof:</p>
+<pre><code class="lang-term"><pre class="term t-default t-fade"><button class="btn t-copy" data-clipboard-text="gprof ./my_program"><svg class="octicon octicon-clippy" viewbox="0 0 14 16" version="1.1" width="14" height="14" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></button><span class="t-line t-prompt-line"><span class="t-prompt">local</span><span class="t-pathsep">:</span><span class="t-path">build </span><span class="t-delimiter">$ </span><span class="t-command">gprof ./my_program</span>
+</span></pre></code></pre>
+</div></div></p>
+<p>Google also has a profiling tool:</p>
+<pre><code class="lang-bash">$ CPUPROFILE=prof.out LD_PRELOAD=/usr/lib/libprofiler.so.0 ./my_program
+$ google-pprof -text ./my_program prof.out
+</code></pre>
+<p>Another option is igprof, which is available on the CERN stack. In comparison with the other sampling profilers, it provides several unique advantages. The following are benefits and drawbacks compared to gprof:</p>
+<ul>
+<li>Does not require special compilation flags.</li>
+<li>More robust when monitoring programs that do nontrivial stuff such as calling libraries or spawning new processes and threads.</li>
+<li>Has a fancy HTML frontend for reports.</li>
+<li>Much faster sampling rate -&gt; misses less, but produces bigger output.</li>
+<li>It is a bit hard to use outside of CERN (e.g. no package in the Debian repos).</li>
+<li>Does not seem to have an option to produce line-by-line annotated source, a gprof feature which can be quite handy in perf analysis</li>
+</ul>
+<p>Compared to valgrind/callgrind:</p>
+<ul>
+<li>Does not run your code in a virtual machine -&gt; enormously faster, however output is less precise (e.g. no cache info).</li>
+<li>Does not bias your performance profile by inflating the relative cost of CPU w.r.t. IO by a factor of 100.</li>
+</ul>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9920128647);" id="example-of-igperfclick-to-expand"><i class="fa fa-bell"></i> Example of igperf<span id="heading-9920128647">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-9920128647"><p>You can profile a program as follows:</p>
+<pre><code class="lang-term"><pre class="term t-default t-fade"><button class="btn t-copy" data-clipboard-text="igprof -d -pp -z -o my_program.pp.gz my_program
+igprof-analyse -d -v -g my_program.pp.gz &gt;&amp; my_program.pp.out"><svg class="octicon octicon-clippy" viewbox="0 0 14 16" version="1.1" width="14" height="14" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></button><span class="t-line t-prompt-line"><span class="t-prompt">local</span><span class="t-pathsep">:</span><span class="t-path">build </span><span class="t-delimiter">$ </span><span class="t-command">igprof -d -pp -z -o my_program.pp.gz my_program</span>
+</span><span class="t-line t-prompt-line"><span class="t-prompt">local</span><span class="t-pathsep">:</span><span class="t-path">build </span><span class="t-delimiter">$ </span><span class="t-command">igprof-analyse -d -v -g my_program.pp.gz &gt;&amp; my_program.pp.out</span>
+</span></pre></code></pre>
+<p>The first line produces a profile, the second line converts it to a readable text report.</p>
+</div></div></p>
+<h3 id="kernel-sampling-profilers">Kernel sampling profilers</h3>
+<p>These are similar to the other sampling profilers, but they use extra information from the Linux kernel when sampling, such as CPU performance counters. This leads them to the following benefits and drawbacks: </p>
+<ul>
+<li>They are hopelessly unportable to non-Linux OS&apos;s. Compare them with Xcode Instruments on macOS and the Windows Performance Toolkit.</li>
+<li>The information that they provide is hardware and kernel-specific, and in particular they won&apos;t run at all if your Linux kernel is too old.</li>
+<li>They tend to make the system protection features of modern Linux distros (e.g. SELinux) go crazy, making it a pain to get them to run.</li>
+<li>As a compensation for all these drawbacks, they promise much more detailed information, comparable to what one can usually only get through callgrind, thanks to the use of hardware performance counters.</li>
+<li>And they can also do system-wide profiling, which is useful when studying interactions between &quot;unrelated&quot; processes.</li>
+</ul>
+<p>Some examples are <code>linux-perf</code> and <code>oprofile</code>.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6925075762);" id="example-of-kernel-profilingclick-to-expand"><i class="fa fa-bell"></i> Example of Kernel profiling<span id="heading-6925075762">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-6925075762"><p>You can also use the kernel and CPU to help (may require root privileges):</p>
+<pre><code class="lang-term"><pre class="term t-default t-fade"><button class="btn t-copy" data-clipboard-text="perf record ./my_program
+perf report ./my_program"><svg class="octicon octicon-clippy" viewbox="0 0 14 16" version="1.1" width="14" height="14" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></button><span class="t-line t-prompt-line"><span class="t-prompt">local</span><span class="t-pathsep">:</span><span class="t-path">build </span><span class="t-delimiter">$ </span><span class="t-command">perf record ./my_program</span>
+</span><span class="t-line t-prompt-line"><span class="t-prompt">local</span><span class="t-pathsep">:</span><span class="t-path">build </span><span class="t-delimiter">$ </span><span class="t-command">perf report ./my_program</span>
+</span></pre></code></pre>
+</div></div></p>
+<h2 id="keep-clarity-a-focus">Keep clarity a focus</h2>
+<p>Your code should have well defined, independent blocks that do as few jobs each as possible, and it should be structured to match a user&apos;s expected behavior (good documentation can allow minor deviations from this). This is, in almost all cases, something you should not have to sacrifice for speed. Package highly optimized code inside these blocks, with a clear indication of what they are supposed to do. Good function/class/etc names go a long way. Try to avoid &quot;ugly&quot; coding practices, as described below.</p>
+<h2 id="stay-general-as-long-as-possible">Stay general as long as possible</h2>
+<p>If you need to write an algorithm, think of how it can be broken up. Try to solve everything generally first. If you have code that has to sort a list, it&apos;s better to separate the list sorting from your algorithm. Then, you can often find an optimised library version of the general tasks; you can write unit tests that test each part; and you can keep optimizations localised to the code they affect. Sometimes you cannot do this, but always try first.</p>
+<p>Use template features when possible to perform tasks at compile time. Modern C++ has <code>constexpr</code> expressions that allow compile time computation to be done, which allow you to avoid hard coding calculated numbers in the code, but to leave the original expressions. You can also use macros as a last resort.</p>
+<h2 id="use-the-language">Use the language</h2>
+<p>Some common issues with writing C++ are:</p>
+<ul>
+<li>Using globals. Don&apos;t.</li>
+<li>Forgetting <code>const</code>. This should be used for every interface, and in C++11, is an indication of multithread safety.</li>
+<li>Custom memory management inside a framework (like Gaudi) that does that for you. This can be made into a more general rule: if a framework provides something, use it. Then the framework can be upgraded, and your code will receive the benefits.</li>
+<li>Try to support and use pass by reference and move semantics. This allows you to avoid copying large data structures many times.</li>
+<li>Using <code>iterator++</code> instead of <code>++iterator</code>, the first is often making a copy wastefully.</li>
+<li>Forgetting to use <code>noexcept</code> if you can&apos;t throw an exception; this can allow the compiler to do more optimization for you.</li>
+</ul>
+<h1 id="common-speedups">Common speedups</h1>
+<p>The following are common ways to speed up computation.</p>
+<ul>
+<li>Precompute expressions, and reuse the results. If you use the expression <code>sin(x)*cos(y)</code> multiple times, you can save processor steps by precomputing it to a temporary variable. Note that if you do this excessively, you might end up with temporary variables in the main memory instead of the cache, so look for many usages or something that takes many processor cycles.</li>
+<li>C++ allows return value optimization; if you return an object created in the function, and it otherwise would go out of scope and be destroyed, it is moved out of the function instead of copied. (Note: This is the case with most compilers for C++11, and is required by the language in most cases for C++17). Make sure all your return statements return the same object for this optimization. (Unnamed object get this automatically, too)</li>
+<li>Perfect forwarding: this is a handy trick in several cases; as a common example, you can construct an object inside a vector instead of copying it in, using <code>emplace_back</code>. The method forward the arguments after the first to the constructor (the first argument), but makes it in-place inside the vector instead of a move or copy.</li>
+<li>Watch for slow general functions, like <code>pow(x,2)</code>, that are designed to be flexible at runtime, when a simple compile time version <code>x*x</code> is available. Profile! </li>
+</ul>
+<h2 id="approximations">Approximations</h2>
+<p>Pay attention to the level of precision you need; if you can make an approximation to an expensive calculation, this can reduce your computing time significantly. Be careful, though, often it can be difficult to speed up functions in the standard library or high-performance libraries; test and measure any improvements you try to make.</p>
+<h1 id="to-multithread-or-not-to-multithread">To multithread or not to multithread</h1>
+<p>One of the hottest topics in programming is the use of multiple threads; on a multithreaded computer or a GPU, the promise of speedup by factors of 2+ is enticing. But there are conditions to these gains besides the obvious requirement that the procedure must be able to be done in parallel; if you have a memory bottleneck for example (very common), that will remain the limiting factor. Another common bottleneck is I/O; that is often improved by threads even on a single core processor.</p>
+<p>If you are working inside a framework, like much of the code for LHCb, and that framework is already multithreaded, it is often slower to then try to introduce more threads; the other CPUs are already busy. Much of the work for these components is in making them <strong>thread-safe</strong>, that is, making them able to run in parallel with other algorithms or with themselves without conflicts for writing/reading memory.</p>
+<h2 id="multithreading-basics-in-c11">Multithreading basics in C++11</h2>
+<p>Multithreading is difficult for most languages to handle well, since we write source code in a linear fashion. There are several common methods for multithreading in C++11:</p>
+<h3 id="thread">Thread</h3>
+<p>With <code>std::thread</code>, you can run a function immediately in parallel, with perfect forwarding. Values are not returned; you will need to pass in pointers, etc. to get results.</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::<span class="hljs-function">thread <span class="hljs-title">t1</span><span class="hljs-params">(my_function, my_argument1)</span></span>;
+<span class="hljs-comment">// Starts running along side code</span>
+t1.join(); <span class="hljs-comment">// Finish the function and return.</span>
+</code></pre>
+<h2 id="future">Future</h2>
+<p>You often want to start a function, go do something else, and then get the result of that function. Futures and promises allow you to do that. A promise is a value that you promise to give at some point, but does not necessarily have a value right now. A future is an object associated with that promise that lets you wait for the result and retrieve it when it is ready. Here is some pseudocode (see similar example <a href="../DevelopKit/code/Performance/future.cpp">here</a>):</p>
+<pre><code class="lang-cpp">void some_slow_function(std::promise&lt;int&gt; p) {
+    std::this_thread::sleep_for(5s);
+    p.set_value(42);
+}
+
+std::promise&lt;int&gt; p;
+std::future&lt;int&gt; f = p.get_future();
+
+std::thread t(some_slow_function, std::move(p));
+// Could do other things here
+std::cout &lt;&lt; &quot;The result is &quot; &lt;&lt; f.get() &lt;&lt; std::endl;
+t.join();
+</code></pre>
+<h2 id="async">Async</h2>
+<p>This usage of futures can be made much easier in some cases using <code>std::async</code>. Notice that the last example had to have a special <code>some_slow_function</code> that worked with a promise. Often you will just want to wrap an existing function that slow, and returns a value. The previous example then <a href="../DevelopKit/code/Performance/async.cpp">becomes</a>:</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">some_slow_function</span><span class="hljs-params">(<span class="hljs-keyword">int</span> time)</span> </span>{
+    <span class="hljs-built_in">std</span>::this_thread::sleep_for(time * <span class="hljs-number">1</span>s);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">42</span>;
+}
+
+<span class="hljs-built_in">std</span>::future&lt;<span class="hljs-keyword">int</span>&gt; f = <span class="hljs-built_in">std</span>::async(<span class="hljs-built_in">std</span>::launch::async, some_slow_function, <span class="hljs-number">5</span>);
+<span class="hljs-comment">// Could do other things here</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The result is &quot;</span> &lt;&lt; f.get() &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+</code></pre>
+<h2 id="data-races">Data Races</h2>
+<p>Multithreading&apos;s biggest issue tends to be data races. Let&apos;s make a pseudocode example:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>
+<span class="hljs-keyword">void</span> thread_1() {
+    x += <span class="hljs-number">1</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">thread_2</span><span class="hljs-params">()</span> </span>{
+    x -= <span class="hljs-number">1</span>;
+}
+<span class="hljs-comment">// Run thread_1 and thread_2 in parallel</span>
+</code></pre>
+<p>What is the value of <code>x</code> after running? The expected answer is 0, since 1 is being added, and 1 is being subtracted. But when  you run this, you&apos;ll randomly get -1, 0, and 1 as an answer. This is because you have to read the value of x in (one operation) and then add 1 to it in the register (one operation) then return it to the <code>x</code> memory location (one operation). When the operations are running in parallel, you might load the value in the second thread before the write happens in the first
+thread, giving you the unexpected results seen previously.</p>
+<p>There are several ways to manage these values. Besides futures and promises, which can be used between threads, the following low level constructs are available.</p>
+<h3 id="mutexes">Mutexes</h3>
+<p>A mutex such as <code>std::mutex</code> allows a lock to be placed around segments of code that must run sequentially. For example, you may notice that <code>std::cout</code> tends to get mangled when multiple threads are printing to the screen. If you place a mutex around each output, the mangling will no longer be an issue. For example:</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::mutex m; <span class="hljs-comment">// Must be the same mutex in the different threads</span>
+
+m.lock(); <span class="hljs-comment">// This line only completes when m is not locked already</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;A line&quot;</span> &lt;&lt; <span class="hljs-string">&quot; that is not interleaved as long as protected by m&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+m.unlock();
+</code></pre>
+<p>If you forget to unlock the mutex, your code will stall forever when it comes on a new lock statement. A <code>std::lock_guard</code> will accept a mutex, locking it immediately, and then unlocking when the lock guard goes out of scope. If you have if statements or code that can throw exceptions, this might be easier than making sure <code>.unlock</code> is called every place it is needed.</p>
+<p>Mutexes solve the issue of linearising a piece of code, but at a huge cost: they make that part of your code completely sequential and also have some small overhead too.</p>
+<h3 id="atomics">Atomics</h3>
+<p>If you are worried about setting and accessing a single value, a faster and simpler method than mutexes are atomics. These often have hardware level support, allowing them to run faster than a matching mutex. These are special version of values that insure that reads and writes never collide. The only difference vs. a normal variable is the use of <code>.load()</code> to access the value (other operations are overloaded to behave as expected). The data race example becomes:</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::atomic&lt;<span class="hljs-keyword">int</span>&gt; x = <span class="hljs-number">0</span>
+<span class="hljs-keyword">void</span> thread_1() {
+    x += <span class="hljs-number">1</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">thread_2</span><span class="hljs-params">()</span> </span>{
+    x -= <span class="hljs-number">1</span>;
+}
+<span class="hljs-comment">// Run thread_1 and thread_2 in parallel</span>
+</code></pre>
+<p>And the code always gives a result of <code>x.load() == 0</code>.</p>
+<h3 id="conditions">Conditions</h3>
+<p>The final method that can be used to communicate between threads is condition variables. This behaves a bit like an atomic, but can be waited on until a thread &quot;notifies&quot; that the variable is ready.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7429187421);" id="further-reading"><i class="fa fa-key"></i> Further reading<span id="heading-7429187421"></span></h3></div><div class="panel-body" id="panel-7429187421"><ul>
+<li><a href="https://gitlab.cern.ch/mschille/fellow-meeting-performance-talk/blob/master/talk.pdf" target="_blank">Performance in C++ for LHCb</a></li>
+<li><a href="https://twiki.cern.ch/twiki/bin/view/LHCb/CodeAnalysisTools" target="_blank">LHCb Code Analysis Tools</a></li>
+</ul>
+</div></div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05d-cppfuture.html" class="navigation navigation-prev " aria-label="Previous page: Prospects in C++'s future">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06b-python.html" class="navigation navigation-next " aria-label="Next page: Python in the upgrade era">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"C++ performance","level":"4.1.10","depth":2,"next":{"title":"Python in the upgrade era","level":"4.1.11","depth":2,"path":"first-development-steps/06b-python.md","ref":"first-development-steps/06b-python.md","articles":[]},"previous":{"title":"Prospects in C++'s future","level":"4.1.9.4","depth":3,"path":"first-development-steps/05d-cppfuture.md","ref":"first-development-steps/05d-cppfuture.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","katex-auto-render@git+https://github.com/lhcb/gitbook-plugin-katex-auto-render.git#master","collapsible-menu","otherlink","term"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-menu":{},"search":{},"otherlink":{},"term":{"copyButtons":true,"fade":true,"lineStyles":true,"prompt":"(?<prompt>[^\\$^#^:]*)(?<pathsep>:?)(?<path>[^\\$^#]*?)(?<delimiter>[\\$#] )(?<command>.*)$","style":"default"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-auto-render":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"The Starterkit team and contributors","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"first-development-steps/06a-perf.md","mtime":"2017-11-10T03:51:27.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-10T03:54:01.325Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-katex-auto-render/katex.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-katex-auto-render/auto-render.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-katex-auto-render/enable-auto-render.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-term/clipboard.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-term/initclip.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-term/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

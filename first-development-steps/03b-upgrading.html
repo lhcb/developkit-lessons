@@ -1,0 +1,892 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Upgrading algorithms · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="The Starterkit team and contributors">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-auto-render/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-term/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="05-cpp.html" />
+    
+    
+    <link rel="prev" href="03a-gaudi.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    The LHCb Starterkit
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../CONTRIBUTING.html">
+            
+                <a href="../CONTRIBUTING.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://lhcb.github.io/starterkit-lessons/first-analysis-steps/">
+            
+                    
+                    First analysis steps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <a target="_blank" href="https://lhcb.github.io/starterkit-lessons/second-analysis-steps/">
+            
+                    
+                    Second analysis steps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    First development steps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="01-intro.html">
+            
+                <a href="01-intro.html">
+            
+                    
+                    Setting up a development environment
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1.1" data-path="01a-cernvm.html">
+            
+                <a href="01a-cernvm.html">
+            
+                    
+                    Setting up a CernVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.1.2" data-path="01b-docker.html">
+            
+                <a href="01b-docker.html">
+            
+                    
+                    Setting up with Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.1.3" data-path="01c-centos.html">
+            
+                <a href="01c-centos.html">
+            
+                    
+                    Setting up CentOS 7
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="01-git.html">
+            
+                <a href="01-git.html">
+            
+                    
+                    Git for LHCb
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.1" data-path="01d-setupsimple.html">
+            
+                <a href="01d-setupsimple.html">
+            
+                    
+                    LB git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2" data-path="01e-setupcomplete.html">
+            
+                <a href="01e-setupcomplete.html">
+            
+                    
+                    Pure git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="01f-building.html">
+            
+                <a href="01f-building.html">
+            
+                    
+                    Building LHCb software
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="01g-testing.html">
+            
+                <a href="01g-testing.html">
+            
+                    
+                    Testing and examples in LHCb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="02a-gaudi-helloworld.html">
+            
+                <a href="02a-gaudi-helloworld.html">
+            
+                    
+                    Hello World in the Gaudi Framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="02b-gaudi-intro.html">
+            
+                <a href="02b-gaudi-intro.html">
+            
+                    
+                    Intro to the Gaudi Framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="03a-gaudi.html">
+            
+                <a href="03a-gaudi.html">
+            
+                    
+                    The Gaudi Framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.1.8" data-path="03b-upgrading.html">
+            
+                <a href="03b-upgrading.html">
+            
+                    
+                    Upgrading algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="05-cpp.html">
+            
+                <a href="05-cpp.html">
+            
+                    
+                    What's new in C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.9.1" data-path="05a-cpp11.html">
+            
+                <a href="05a-cpp11.html">
+            
+                    
+                    What's new in C++11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.2" data-path="05b-cpp14.html">
+            
+                <a href="05b-cpp14.html">
+            
+                    
+                    What's new in C++14
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.3" data-path="05c-cpp17.html">
+            
+                <a href="05c-cpp17.html">
+            
+                    
+                    What's new in C++17
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9.4" data-path="05d-cppfuture.html">
+            
+                <a href="05d-cppfuture.html">
+            
+                    
+                    Prospects in C++'s future
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.10" data-path="06a-perf.html">
+            
+                <a href="06a-perf.html">
+            
+                    
+                    C++ performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.11" data-path="06b-python.html">
+            
+                <a href="06b-python.html">
+            
+                    
+                    Python in the upgrade era
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <a target="_blank" href="ref://developkit-lessons.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Upgrading algorithms</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="upgrading-an-algorithm">Upgrading an Algorithm</h1>
+<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(582451664);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-582451664"></span></h3></div><div class="panel-body" id="panel-582451664"><ul>
+<li>&quot;Learn about upgrading algorithms to the new Gaudi framework.&quot;</li>
+</ul>
+</div></div></p>
+<h2 id="steps-to-convert">Steps to convert</h2>
+<p>The following are the five steps to upgrade an algorithm.</p>
+<h3 id="identify-tes-interactions">Identify TES interactions</h3>
+<p>First, find and identify the input data and output data. You are looking for <code>get</code>, <code>put</code>, or <code>getIfExists</code>. For example:</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7375855443);" id="example-locating-tes-interactionsclick-to-expand"><i class="fa fa-bell"></i> Example: Locating TES interactions<span id="heading-7375855443">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7375855443"><pre><code class="lang-term"><pre class="term t-default t-fade"><button class="btn t-copy" data-clipboard-text="egrep &apos;get|put&apos; Pr/PrAlgorithms/src/PrMatchNN.cpp"><svg class="octicon octicon-clippy" viewbox="0 0 14 16" version="1.1" width="14" height="14" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></button><span class="t-line t-prompt-line"><span class="t-prompt">local</span><span class="t-pathsep">:</span><span class="t-path">dir </span><span class="t-delimiter">$ </span><span class="t-command">egrep &apos;get|put&apos; Pr/PrAlgorithms/src/PrMatchNN.cpp</span>
+</span><span class="t-line">declareProperty(&quot;VeloInput&quot;, m_veloLocation=LHC...
+</span><span class="t-line">declareProperty(&quot;SeedInput&quot;, m_seedLocation=LHC...
+</span><span class="t-line">declareProperty(&quot;MatchOutput&quot;, m_matchLocation=...
+</span><span class="t-line">put(matchs, m_matchLocation);
+</span><span class="t-line">LHCb::Tracks* velos = getIfExists<lhcb::tracks>(m_veloLocation);
+</lhcb::tracks></span><span class="t-line">LHCb::Tracks* seeds = getIfExists<lhcb::tracks>(m_seedLocation);
+</lhcb::tracks></span></pre></code></pre>
+<p>In this case, the <code>Velo Tracks</code> + <code>Seed Tracks</code> are producing <code>Output Tracks</code>.</p>
+</div></div></p>
+<h3 id="deduce-functional-algorithm-to-use">Deduce functional algorithm to use</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Out/in</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1-n</th>
+<th style="text-align:left">vector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"> <strong>0</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>Consumer</code></td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right"> <strong>1</strong></td>
+<td style="text-align:center"><code>Producer</code></td>
+<td style="text-align:center"><code>Transformer</code></td>
+<td style="text-align:left"><code>MergingTransformer</code></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right"> <strong>n</strong></td>
+<td style="text-align:center"><code>Producer</code></td>
+<td style="text-align:center"><code>MultiTransformer</code></td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right"> <strong>vector</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>SplittingTransform</code></td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right"> <strong>boolean</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>FilterPredicate</code></td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right"> <strong>boolean+1-n</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>MultiTransformerFilter</code></td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6668093161);" id="possible-inputs"><i class="fa fa-info-circle"></i> Possible inputs<span id="heading-6668093161"></span></h3></div><div class="panel-body" id="panel-6668093161"><ul>
+<li><strong>0</strong> : no input, pure producer</li>
+<li><strong>1-n</strong> : one or several independent inputs. This number and the type of each input must be known at compile time</li>
+<li><strong>vector</strong> : any number of inputs (not know at compile time), all of the same type, aka a vector of inputs of the same type</li>
+</ul>
+</div></div></p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8275074802);" id="possible-outputs"><i class="fa fa-info-circle"></i> Possible outputs<span id="heading-8275074802"></span></h3></div><div class="panel-body" id="panel-8275074802"><ul>
+<li><strong>0</strong> : no output, pure consumer</li>
+<li><strong>1-n</strong> : one or several independent outputs. This number and the type of each output must be known at compile time</li>
+<li><strong>vector</strong> : any number of outputs (not know at compile time), all of the same type, aka a vector of outputs of the same type</li>
+<li><strong>boolean</strong> : an additional boolean output, saying whether we should carry on or stop the processing, aka a filter</li>
+</ul>
+</div></div></p>
+<h3 id="modify-algorithm-declaration">Modify Algorithm declaration</h3>
+<ul>
+<li>Change inheritance from Algorithm to your functional algorithm base class. </li>
+<li>Template the functional algorithm with the &#x201C;signature&#x201D; of the algorithm, that is its data flow.</li>
+</ul>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(534373066);" id="example-declarationclick-to-expand"><i class="fa fa-bell"></i> Example: Declaration<span id="heading-534373066">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-534373066"><p>In the case of <code>Velo Tracks</code> + <code>Seed Tracks</code> producing <code>Output Tracks</code>:</p>
+<pre><code class="lang-cpp">Gaudi::Functional::Transformer
+      &lt;LHCb::Tracks(<span class="hljs-keyword">const</span> LHCb::Tracks&amp;, <span class="hljs-keyword">const</span> LHCb::Tracks&amp;)&gt;
+</code></pre>
+<p>In the case of <code>Tracks</code> producing <code>Vector of Tracks</code>:</p>
+<pre><code class="lang-cpp">Gaudi::Functional::SplittingTransformer
+      &lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;LHCb::Tracks&gt; (<span class="hljs-keyword">const</span> LHCb::Tracks&amp;)&gt;
+</code></pre>
+</div></div></p>
+<ul>
+<li>All inputs are now using <code>const</code> references.</li>
+<li>All declarations of members storing locations of input/output can be dropped (automatic retrieval from TES).</li>
+<li>Equivalent properties are automatically defined by the functional framework.</li>
+</ul>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4622304101);" id="example-member-declarationclick-to-expand"><i class="fa fa-bell"></i> Example: Member declaration<span id="heading-4622304101">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-4622304101"><h4 id="member-declaration-">Member declaration:</h4>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> m_veloLocation;
+</code></pre>
+<h4 id="used-in-constructor-as-">Used in constructor as:</h4>
+<pre><code class="lang-cpp">declareProperty(<span class="hljs-string">&quot;VeloInput&quot;</span>, m_veloLocation=...
+</code></pre>
+</div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(372754775);" id="example-prmatchnnclick-to-expand"><i class="fa fa-bell"></i> Example: PrMatchNN<span id="heading-372754775">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-372754775"><h4 id="old-">Old:</h4>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;GaudiAlg/GaudiAlgorithm.h&quot;</span></span>
+<span class="hljs-keyword">class</span> PrMatchNN : <span class="hljs-keyword">public</span> GaudiAlgorithm {
+   ...
+   <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> m_veloLocation;
+   <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> m_seedLocation;
+   <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> m_matchLocation;
+</code></pre>
+<h4 id="new-">New:</h4>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;GaudiAlg/Transformer&quot;</span></span>
+<span class="hljs-keyword">class</span> PrMatchNN :
+    <span class="hljs-keyword">public</span> Gaudi::Functional::Transformer
+    &lt;LHCb::Tracks(<span class="hljs-keyword">const</span> LHCb::Tracks&amp;, <span class="hljs-keyword">const</span> LHCb::Tracks&amp;)&gt; {
+    ...
+</code></pre>
+</div></div></p>
+<h3 id="modify-constructordestructor">Modify constructor/destructor</h3>
+<h4 id="changes">Changes</h4>
+<ul>
+<li>Initialize functional algorithm rather than <code>Algorithm</code></li>
+<li>New arguments are needed<ul>
+<li>Input location / list of input locations in TES</li>
+<li>Output / list of output locations in TES</li>
+</ul>
+</li>
+<li>Locations are given using <code>KeyValue</code> objects, such as <code>KeyValue{&quot;VeloInput&quot;, LHCb::TrackLocation::Velo}</code></li>
+<li>This creates the adequate property in the back<ul>
+<li>So old <code>declareProperty</code> lines can be dropped</li>
+</ul>
+</li>
+<li>For each location, a default might be given</li>
+</ul>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9235322898);" id="example-prmatchnnclick-to-expand"><i class="fa fa-bell"></i> Example: PrMatchNN<span id="heading-9235322898">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-9235322898"><h4 id="old-">Old:</h4>
+<pre><code class="lang-cpp">PrMatchNN::PrMatchNN(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; name, ISvcLocator* pSvcLocator) :
+  GaudiAlgorithm(name, pSvcLocator), ... {
+    declareProperty(<span class="hljs-string">&quot;VeloInput&quot;</span>, m_veloLocation=...
+    declareProperty(<span class="hljs-string">&quot;SeedInput&quot;</span>, m_seedLocation=...
+    declareProperty(<span class="hljs-string">&quot;MatchOutput&quot;</span>, m_matchLocation=...
+</code></pre>
+<h4 id="new-">New:</h4>
+<pre><code class="lang-cpp">PrMatchNN::PrMatchNN(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> &amp; name, ISvcLocator* pSvcLocator) :
+ Transformer(name, pSvcLocator,
+   {KeyValue{<span class="hljs-string">&quot;VeloInput&quot;</span>, LHCb::TrackLocation::Velo},
+    KeyValue{<span class="hljs-string">&quot;SeedInput&quot;</span>, LHCb::TrackLocation::Seed},
+    KeyValue{<span class="hljs-string">&quot;MatchOutput&quot;</span>, LHCb::TrackLocation::Match}}),
+ ... {
+</code></pre>
+</div></div></p>
+<h3 id="convert-execute-into-operator">Convert execute into operator(...)</h3>
+<p>The declaration of <code>operator()</code> will have a signature matching the data flow, and will be made using <code>const</code> references. The definition is of the form:</p>
+<pre><code class="lang-cpp"><span class="hljs-function">Output <span class="hljs-title">operator</span><span class="hljs-params">()</span> <span class="hljs-params">(<span class="hljs-keyword">const</span> Input&amp;, ...)</span> <span class="hljs-keyword">const</span> override</span>;
+</code></pre>
+<p>The input is a <code>const</code> reference, the method itself is both <code>const</code> and will <code>override</code> another method. The output is returned by value. It is a good idea to add <code>std::move(...)</code> around the return value to make sure a copy is not made; compilers, especially newer ones, may do this for you.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4683003798);" id="compared-to-execute"><i class="fa fa-info-circle"></i> Compared to execute<span id="heading-4683003798"></span></h3></div><div class="panel-body" id="panel-4683003798"><ul>
+<li>Drop all interactions with TES (<code>get</code>/<code>put</code>)</li>
+<li>Replace memory allocation of the output by simple creation on the stack</li>
+<li>Thus change accordingly <code>-&gt;</code> into <code>.</code>, drop some <code>*</code></li>
+<li>Return output rather than a <code>StatusCode</code></li>
+<li>Throw an exception when you were returning a bad <code>StatusCode</code></li>
+</ul>
+</div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8915155629);" id="example-prmatchnnclick-to-expand"><i class="fa fa-bell"></i> Example: PrMatchNN<span id="heading-8915155629">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-8915155629"><p>To simplify the following example, the status code checks have been removed.</p>
+<h4 id="execute-method-">Execute method:</h4>
+<pre><code class="lang-cpp">LHCb::Tracks* matchs = <span class="hljs-keyword">new</span> LHCb::Tracks;
+put(matchs, m_matchLocation);
+LHCb::Tracks* velos = getIfExists&lt;LHCb::Tracks&gt;(m_veloLocation);
+LHCb::Tracks* seeds = getIfExists&lt;LHCb::Tracks&gt;(m_seedLocation);
+StatusCode sc = m_matchTool-&gt;match(*velos, *seeds, *matchs);
+<span class="hljs-keyword">return</span> sc;
+</code></pre>
+<h4 id="operator-">Operator ():</h4>
+<pre><code class="lang-cpp">LHCb::Tracks matchs;
+StatusCode sc = m_matchTool-&gt;match(velos, seeds, matchs);
+<span class="hljs-keyword">return</span> matchs;
+</code></pre>
+<p>To convert, first the TES interactions were dropped (now part of the header), memory allocation was removed (created on the stack), dereferencing pointers was removed, and the object was returned instead of the <code>StatusCode</code>.</p>
+</div></div></p>
+<h2 id="improving">Improving</h2>
+<p>These changes were made to give faster, more readable code, easy transition to parallel Gaudi, and more checks at compile time. To truly get improvements to the code, a few further steps should be taken to update the algorithms while it is already being modified and reviewed.</p>
+<h3 id="property">Property</h3>
+<p><code>Gaudi::Property</code> provides a simple, clean way of declaring properties, and almost obsoletes the old <code>declareProperty</code>. It is not completely backward compatible, but fixes are trivial and usually result in better code. The property setup will exist in one place (header) instead of two (header and constructor).</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5260610707);" id="example-property-conversionclick-to-expand"><i class="fa fa-bell"></i> Example: Property conversion<span id="heading-5260610707">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-5260610707"><h4 id="old-header">Old header</h4>
+<pre><code class="lang-cpp"><span class="hljs-keyword">bool</span> m_skipFailedFitAtInput;
+<span class="hljs-keyword">double</span> m_maxChi2DoF;
+</code></pre>
+<h4 id="old-constructor">Old constructor</h4>
+<pre><code class="lang-cpp">declareProperty(<span class="hljs-string">&quot;SkipFailedFitAtInput&quot;</span>, m_skipFailedFitAtInput=<span class="hljs-literal">true</span>);
+declareProperty(<span class="hljs-string">&quot;MaxChi2DoF&quot;</span>, m_maxChi2DoF=<span class="hljs-number">9999</span>, <span class="hljs-string">&quot;Max chi2 per track&quot;</span>);
+</code></pre>
+<h4 id="new-header">New header</h4>
+<pre><code class="lang-cpp">Gaudi::Property&lt;<span class="hljs-keyword">bool</span>&gt; m_skipFailedFitAtInput
+    {<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;SkipFailedFitAtInput&quot;</span>, <span class="hljs-literal">true</span> };
+Gaudi::Property&lt;<span class="hljs-keyword">double</span>&gt; m_maxChi2DoF
+    {<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;MaxChi2DoF&quot;</span>, <span class="hljs-number">9999</span>, <span class="hljs-string">&quot;Max chi2 per track&quot;</span>};
+</code></pre>
+</div></div></p>
+<p>In most cases, this change is transparent and you can use the property the same way. In cases where it does not work, such as when using <code>-&gt;</code> for a pointer property, you can use <code>.value()-&gt;</code> instead. Also, printing a property to an iostream is customized, giving name and value. If the old print is needed, use <code>.value()</code> to output just the value.</p>
+<h3 id="modern-c">Modern C++</h3>
+<p>This is a great time to update to modern C++ syntax. Although all C++11 and much of C++14 is readily available, even in the base-line GCC 4.9 compiler, the following changes are especially useful:</p>
+<ul>
+<li>Member initialization: By moving member initialization to the declaration, you can simplify the constructor and discover missing initializations.</li>
+<li>Use <code>nullptr</code> instead of <code>0</code> or <code>NULL</code>: Type safety is always a good thing, and can catch pointer bugs.</li>
+<li>Use <code>using</code> constructor if possible: if everything can be moved out of the constructor, you can use a <code>using</code> directive instead to further clean up code.</li>
+<li>Use <code>auto</code> and range-based loops: Often it is nicer to your reader to be explicit, but in many cases, the type does not matter or is something complex, like an iterator, that really does not need to be known. Those can be moved to using <code>auto</code> to clean up code. Also, closely related, moving to range-based for loops can make code much, much easier to read.</li>
+<li>Lambdas: Using the built in lambdas instead of <code>boost::lambda</code> and its quirks. Also can be used to move some tasks to the STL that used to be loops.</li>
+</ul>
+<h3 id="thread-safety">Thread safety</h3>
+<p>Moving to the new framework <em>should</em> take care of thread safety by using <code>const</code>, but there are a few ways around it that, unfortunately, are common in our code base. You can remove <code>const</code> with <code>const_cast</code>, and a member variable can be changed in a <code>const</code> method if it is declared <code>mutable</code>. As a general rule, you should only see <code>mutable</code> in C++11 when the variable itself is thread-safe (for example, a mutex). It should <em>not</em> be used to simply make adapting bad code easier. To remove
+them, you can usually simply remove the <code>const_cast</code> or <code>mutable</code>, then trace down the compiler errors to see what is happening.</p>
+<p>Often these are introduced because code is not using the TES for data transmission; the new <code>AnyDataHandle</code> makes that trivial to do now, so the best solution is to put the data in the TES using an <code>AnyDataHandle</code>.</p>
+<p>You&apos;ll want to remove <code>Incident</code>s, as well. You&apos;ll see something like this:</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">handle</span><span class="hljs-params">(<span class="hljs-keyword">const</span> Incident&amp;)</span> override final</span>;
+</code></pre>
+<p>And, in the constructor:</p>
+<pre><code class="lang-cpp">incSvc()-&gt;addListener(<span class="hljs-keyword">this</span>, IncidentType::EndEvent);
+</code></pre>
+<p>In most cases, this is only needed to reset a cache at the start of the event. The cache needs to be removed to be thread safe anyway, so that also solves the <code>Incident</code> issue. In the other cases, the TES or function arguments should replace the communication that the <code>Incident</code> was providing.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4773222318);" id="further-reading"><i class="fa fa-key"></i> Further reading<span id="heading-4773222318"></span></h3></div><div class="panel-body" id="panel-4773222318"><blockquote>
+<ul>
+<li><a href="https://indico.cern.ch/event/595667/" target="_blank">5th hackthon talk</a> (this lesson was based on the presentation here by S. Ponce.)</li>
+</ul>
+</blockquote>
+</div></div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03a-gaudi.html" class="navigation navigation-prev " aria-label="Previous page: The Gaudi Framework">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="05-cpp.html" class="navigation navigation-next " aria-label="Next page: What's new in C++">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Upgrading algorithms","level":"4.1.8","depth":2,"next":{"title":"What's new in C++","level":"4.1.9","depth":2,"path":"first-development-steps/05-cpp.md","ref":"first-development-steps/05-cpp.md","articles":[{"title":"What's new in C++11","level":"4.1.9.1","depth":3,"path":"first-development-steps/05a-cpp11.md","ref":"first-development-steps/05a-cpp11.md","articles":[]},{"title":"What's new in C++14","level":"4.1.9.2","depth":3,"path":"first-development-steps/05b-cpp14.md","ref":"first-development-steps/05b-cpp14.md","articles":[]},{"title":"What's new in C++17","level":"4.1.9.3","depth":3,"path":"first-development-steps/05c-cpp17.md","ref":"first-development-steps/05c-cpp17.md","articles":[]},{"title":"Prospects in C++'s future","level":"4.1.9.4","depth":3,"path":"first-development-steps/05d-cppfuture.md","ref":"first-development-steps/05d-cppfuture.md","articles":[]}]},"previous":{"title":"The Gaudi Framework","level":"4.1.7","depth":2,"path":"first-development-steps/03a-gaudi.md","ref":"first-development-steps/03a-gaudi.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","katex-auto-render@git+https://github.com/lhcb/gitbook-plugin-katex-auto-render.git#master","collapsible-menu","otherlink","term"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-menu":{},"search":{},"otherlink":{},"term":{"copyButtons":true,"fade":true,"lineStyles":true,"prompt":"(?<prompt>[^\\$^#^:]*)(?<pathsep>:?)(?<path>[^\\$^#]*?)(?<delimiter>[\\$#] )(?<command>.*)$","style":"default"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-auto-render":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"The Starterkit team and contributors","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"first-development-steps/03b-upgrading.md","mtime":"2017-11-10T03:51:27.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-10T03:54:01.325Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-katex-auto-render/katex.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-katex-auto-render/auto-render.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-katex-auto-render/enable-auto-render.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-term/clipboard.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-term/initclip.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-term/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
