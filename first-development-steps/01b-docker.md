@@ -9,7 +9,7 @@ The following setup is based on the Hackathon setup [here](https://gitlab.cern.c
 
 ## Prerequisites
 
-* Docker: you should be able to run Docker containers. On MacOS you should have the latest version of Docker, which finally has built in virtualization. Be sure to use the most recent version of `upgrade-hackathon-setup`, as well, as several Mac related issues were fixed, and Mac is now fully supported with no (known) caveats.
+* Docker: you should be able to run Docker containers. On MacOS you should have the latest version of Docker, which finally has built in virtualization. Be sure to use the most recent version of `upgrade-hackathon-setup`, as well, as several Mac related issues were fixed, and Mac is now fully supported with no (known) caveats. Also ensure that you're logged in on Docker by running the command `docker login`, supplying your Docker ID (username, __not__ email address!) and password.
 * Fuse: You should have a very recent version of Fuse (or OSXFuse on MacOS)
 * CVMFS: you should have access to /cvmfs/lhcb.cern.ch. On a Mac you will need [OSXFuse](http://osxfuse.github.io/) and [CernVM-FS](http://cernvm.cern.ch/portal/filesystem/cvmfs-2.3).
 
