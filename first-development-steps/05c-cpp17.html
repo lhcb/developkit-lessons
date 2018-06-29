@@ -395,7 +395,20 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.9" data-path="05-cpp.html">
+        <li class="chapter " data-level="5.1.9" data-path="03c-counters.html">
+            
+                <a href="03c-counters.html">
+            
+                    
+                    New counters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="05-cpp.html">
             
                 <a href="05-cpp.html">
             
@@ -409,7 +422,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.9.1" data-path="05a-cpp11.html">
+        <li class="chapter " data-level="5.1.10.1" data-path="05a-cpp11.html">
             
                 <a href="05a-cpp11.html">
             
@@ -422,7 +435,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.9.2" data-path="05b-cpp14.html">
+        <li class="chapter " data-level="5.1.10.2" data-path="05b-cpp14.html">
             
                 <a href="05b-cpp14.html">
             
@@ -435,7 +448,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.1.9.3" data-path="05c-cpp17.html">
+        <li class="chapter active" data-level="5.1.10.3" data-path="05c-cpp17.html">
             
                 <a href="05c-cpp17.html">
             
@@ -448,7 +461,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.9.4" data-path="05d-cppfuture.html">
+        <li class="chapter " data-level="5.1.10.4" data-path="05d-cppfuture.html">
             
                 <a href="05d-cppfuture.html">
             
@@ -466,7 +479,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.10" data-path="06a-perf.html">
+        <li class="chapter " data-level="5.1.11" data-path="06a-perf.html">
             
                 <a href="06a-perf.html">
             
@@ -479,7 +492,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.11" data-path="06b-python.html">
+        <li class="chapter " data-level="5.1.12" data-path="06b-python.html">
             
                 <a href="06b-python.html">
             
@@ -563,56 +576,13 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="new-features-in-c17-for-lhcb-physicists">New features in C++17 for LHCb Physicists</h1>
-<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2761858159);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-2761858159"></span></h3></div><div class="panel-body" id="panel-2761858159"><ul>
+<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8070634774);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-8070634774"></span></h3></div><div class="panel-body" id="panel-8070634774"><ul>
 <li>&quot;Learn a few of the most useful tools in C++17.&quot;</li>
 </ul>
 </div></div></p>
-<p>The every-three-year cycle has changed the development of C++; we are now getting consistent releases somewhere in-between the major and minor releases of old. The 2017 release may be called minor by some, with a huge portion of the planned improvements being pushed back another 3-6 years, but there were several substantial changes in areas that particle physicists can use.</p>
-<h2 id="parallel-standard-library-algorithms">Parallel standard library algorithms</h2>
-<p>You can now set an execution policy on algorithms in the standard library; sequential, parallel, and vector are allowed. It is integrated into the algorithms library; you just add the execution policy as the first argument to the algorithm. For example:</p>
-<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">double</span>&gt; vals = {<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>};
-<span class="hljs-keyword">auto</span> my_square = [](<span class="hljs-keyword">double</span> value){<span class="hljs-keyword">return</span> value*value;}
-<span class="hljs-built_in">std</span>::for_each(<span class="hljs-built_in">std</span>::parallel::par_vec, vals.begin(), vals.end(), my_square);
-</code></pre>
-<p>Most of the old algorithms support these execution policies, and several new algorithms have been added to cover parallel usage. </p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4862967653);" id="note-for-gaudi-usersclick-to-expand"><i class="fa fa-bell"></i> Note for Gaudi users<span id="heading-4862967653">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-4862967653"><p>Remember, if you are already in a multithreaded application such as Gaudi, you may not get much benefit from multithreading further.</p>
-<p>Also, the Gaudi framework will use a Threaded Building Blocks (TBB) backend to run the components multithreaded, which means that individual components should not be also multithreaded with a different scheme. If these eventually play together more nicely, this warning may go away.</p>
-</div></div></p>
-<h2 id="filesystem">Filesystem</h2>
-<p>The powerful Boost file system has finally made it into the standard library, after three revisions and promises every three years. This allows object oriented syntax for file manipulation, and works on Windows/Mac/Linux. However, it probably will not be integrated into libraries very quickly, requiring casting to C-style strings to be used. Should still be very useful. If you are familiar with Python&apos;s pathlib or a similar library, this will seem familiar.</p>
-<p>A simple example of the new filesystem:</p>
-<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> file_in_path = <span class="hljs-built_in">std</span>::filesystem::current_path() / <span class="hljs-string">&quot;file.txt&quot;</span>;
-file_in_path.replace_extension(<span class="hljs-string">&quot;.log&quot;</span>);
-<span class="hljs-keyword">if</span>(<span class="hljs-built_in">std</span>::filesystem::exists(file_in_path))
-    ...
-</code></pre>
-<p>Here we see that the <code>/</code> operator joins path segments, the paths have useful member functions, and the non-member functions can operate on the underlying filesystem. There exists a <a href="http://en.cppreference.com/w/cpp/filesystem" target="_blank">full set of filesystem operations</a>. Generally, any documentation you find for <code>Boost::filesystem</code> Version 3 should also be applicable.</p>
-<h2 id="utilities">Utilities</h2>
-<p>The removal of using raw pointers and unsafe C syntax continues with three tremendously useful classes from Boost. Feel free to check the <a href="http://en.cppreference.com/w/cpp/utility" target="_blank">cppreference page</a> or <a href="http://www.boost.org/doc/libs/" target="_blank">Boost libraries</a> for examples and usage.</p>
-<h3 id="optional">Optional</h3>
-<p>One of the common uses for pointers is the creation of a value that might not exist (<code>nullptr</code>). This has the undesirable side effect of dynamically allocating memory, and requires the optional deletion of the allocated memory. <code>std::optional</code> provides a safe, stack based solution that clearly defines your intent, as well.</p>
-<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::optional&lt;Massive&gt; maybe = maybe_make_massive_obj();
-<span class="hljs-keyword">if</span>(maybe) {
-    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Massive object exists: &quot;</span> &lt;&lt; *maybe;
-}
-</code></pre>
-<h3 id="variant">Variant</h3>
-<p><code>std::variant</code> provides a C++ syntax for a safe C <code>union</code> replacement. It can store a value from a predefined list of types. The size of the object is equal to the largest possible contained type.</p>
-<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::variant&lt;<span class="hljs-keyword">int</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; either;
-either = <span class="hljs-number">2</span>; <span class="hljs-comment">// Now an int</span>
-either = <span class="hljs-string">&quot;hi&quot;</span>; <span class="hljs-comment">// Now a string</span>
-<span class="hljs-keyword">try</span> {
-    <span class="hljs-keyword">int</span> x = <span class="hljs-built_in">std</span>::get&lt;<span class="hljs-keyword">int</span>&gt;(either); 
-} <span class="hljs-keyword">catch</span> (<span class="hljs-built_in">std</span>::bad_variant_access&amp;) {
-    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;This is not an int&quot;</span>;
-}
-</code></pre>
-<p>One particularly powerful feature is the <code>.visit</code> method, which takes a callable that must be valid for all possible types. You can combine this with auto lambdas to process the contents very generally.</p>
-<h3 id="any">Any</h3>
-<p><code>std::any</code> should help kill the desire to use unsafe void pointer casts. It can hold anything, and allows access with <code>any_cast</code> specialisations.</p>
-<h3 id="string-view">String view</h3>
-<p>A new class, <code>std::string_view</code>, replaces the usage of <code>std::string&amp;</code>, and promises faster string usage. Libraries should use it, and the user will not notice a difference except faster code.</p>
+<p>The every-three-year cycle has changed the development of C++; we are now getting consistent releases somewhere in-between the major and minor releases of old. The 2017 release may be called minor by some, with a huge portion of the planned improvements being pushed back another 3-6 years, but there were several substantial changes in areas that particle physicists can use. The LHCb software (except for the underlying Guadi) uses C++17 as it exists in GCC 7.</p>
 <h2 id="syntax-improvements">Syntax improvements</h2>
+<p>GCC 7 should be feature complete for syntax improvements (as is Clang 5).</p>
 <h3 id="constructor-argument-deduction">Constructor argument deduction</h3>
 <p>Templated constructors (finally!) support template deduction, allowing them to behave like functions. This makes the old function wrappers, like <code>make_tuple</code> and <code>make_shared</code> obsolete. This makes many templated classes much easier to use for the average user.</p>
 <pre><code class="lang-cpp"><span class="hljs-comment">// C++11</span>
@@ -640,18 +610,74 @@ either = <span class="hljs-string">&quot;hi&quot;</span>; <span class="hljs-comm
 <p>The slow removal of the secondary preprocessor language continues with a static <code>if constexpr</code> statement.
 Lambdas now can be <code>constexpr</code>, and are allowed in <code>constexpr</code> functions.  And while we are on the subject of lambda&apos;s, they also gained the ability to capture the pointer to the current class by value, with <code>[*this]</code>.</p>
 <p>The language is now better defined, with less left up to the compiler implementation. The order of expression evaluation is no longer left up to the compiler in most cases, reducing subtle portability bugs.
-The compiler is now guarantied to avoid a copy (copy elision) in many cases; you should already be assuming copy elision in C++11/14 since the compilers have had the option to do it since C++11.
+The compiler is now guarantied to avoid a copy (copy elision) in many cases; you can even return a class that does not support moving. (Note: there&apos;s a bug with copy elision in GCC 8.1, to be fixed in 8.2).
 Inline variables are finally allowed, removing the compiler errors that required irritating workarounds and separate <code>.cpp</code> files when all you needed was a header file. You still are not supposed to have global variables, but if you do, now they are easier to write correctly.</p>
 <p>Variadic macros now have folding syntax, which allows you to perform reduction with them easily. Inside your template function with variadic parameter <code>args</code> you can do <code>0 + ... + args</code> to sum over <code>args</code> (other operators are supported, including <code>,</code>. The <code>...</code> syntax can be used for using declarations now, too.</p>
 <p><code>#if __has_include(&lt;headerfile&gt;)</code> now allows you use the preprocessor to check for availability of header files, greatly simplifying the build system, since you can now directly check to see if a library is available.</p>
 <p>New attributes have been added, such as <code>[[maybe_unused]]</code>. Attributes are allowed in more places, and there is now a clear requirement that a compiler ignore any attribute that it does not recognise. These hopefully will finally begin to replace the various <code>#pragmas</code> currently in use.</p>
+<h3 id="smaller-features">Smaller features</h3>
+<p>You can nest namespaces directly now.</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">namespace</span> A::B {...
+</code></pre>
+<p>Template arguments can be <code>auto</code>, which is any non-Type argument. Hexadecimal float point literals are allowed. List initialization works for enums. C11 is now the base, instead of C99.</p>
+<h2 id="standard-template-library">Standard Template Library</h2>
+<p>These improvements are a bit slower in coming, as usual. Features that are not available yet will be noted.</p>
+<h3 id="utilities">Utilities</h3>
+<p>The removal of using raw pointers and unsafe C syntax continues with three tremendously useful classes from Boost. Feel free to check the <a href="http://en.cppreference.com/w/cpp/utility" target="_blank">cppreference page</a> or <a href="http://www.boost.org/doc/libs/" target="_blank">Boost libraries</a> for examples and usage.</p>
+<h4 id="optional">Optional</h4>
+<p>One of the common uses for pointers is the creation of a value that might not exist (<code>nullptr</code>). This has the undesirable side effect of dynamically allocating memory, and requires the optional deletion of the allocated memory. <code>std::optional</code> provides a safe, stack based solution that clearly defines your intent, as well.</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::optional&lt;Massive&gt; maybe = maybe_make_massive_obj();
+<span class="hljs-keyword">if</span>(maybe) {
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Massive object exists: &quot;</span> &lt;&lt; *maybe;
+}
+</code></pre>
+<h4 id="variant">Variant</h4>
+<p><code>std::variant</code> provides a C++ syntax for a safe C <code>union</code> replacement. It can store a value from a predefined list of types. The size of the object is equal to the largest possible contained type.</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::variant&lt;<span class="hljs-keyword">int</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; either;
+either = <span class="hljs-number">2</span>; <span class="hljs-comment">// Now an int</span>
+either = <span class="hljs-string">&quot;hi&quot;</span>; <span class="hljs-comment">// Now a string</span>
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">int</span> x = <span class="hljs-built_in">std</span>::get&lt;<span class="hljs-keyword">int</span>&gt;(either); 
+} <span class="hljs-keyword">catch</span> (<span class="hljs-built_in">std</span>::bad_variant_access&amp;) {
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;This is not an int&quot;</span>;
+}
+</code></pre>
+<p>One particularly powerful feature is the <code>.visit</code> method, which takes a callable that must be valid for all possible types. You can combine this with auto lambdas to process the contents very generally.</p>
+<h4 id="any">Any</h4>
+<p><code>std::any</code> should help kill the desire to use unsafe void pointer casts. It can hold anything, and allows access with <code>any_cast</code> specialisations.</p>
+<h3 id="string-view">String view</h3>
+<p>A new class, <code>std::string_view</code>, replaces the usage of <code>std::string&amp;</code>, and promises faster string usage. Libraries should use it, and the user will not notice a difference except faster code. (If you use ROOT, you&apos;ve probably already seen errors mentioning <code>string_view</code> when you didn&apos;t match C++ versions correctly; this comes from ROOT trying to backport <code>string_view</code>.)</p>
+<h3 id="parallel-standard-library-algorithms">Parallel standard library algorithms</h3>
+<p><div class="panel panel-warning"><div class="panel-body" id="panel-1231407744"><p>Not available in any open source compiler yet! You can use the <a href="https://software.intel.com/en-us/get-started-with-pstl" target="_blank">Intel Parallel STL</a>, however, which is planned to be proposed for merge into both GCC and Clang.</p>
+</div></div></p>
+<p>You can now set an execution policy on algorithms in the standard library; sequential, parallel, and vector are allowed. It is integrated into the algorithms library; you just add the execution policy as the first argument to the algorithm. For example:</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">double</span>&gt; vals = {<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>};
+<span class="hljs-keyword">auto</span> my_square = [](<span class="hljs-keyword">double</span> value){<span class="hljs-keyword">return</span> value*value;}
+<span class="hljs-built_in">std</span>::for_each(<span class="hljs-built_in">std</span>::parallel::par_vec, vals.begin(), vals.end(), my_square);
+</code></pre>
+<p>Most of the old algorithms support these execution policies, and several new algorithms have been added to cover parallel usage. </p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9740382562);" id="note-for-gaudi-usersclick-to-expand"><i class="fa fa-bell"></i> Note for Gaudi users<span id="heading-9740382562">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-9740382562"><p>Remember, if you are already in a multithreaded application such as Gaudi, you may not get much benefit from multithreading further.</p>
+<p>Also, the Gaudi framework will use a Threaded Building Blocks (TBB) backend to run the components multithreaded, which means that individual components should not be also multithreaded with a different scheme. If these eventually play together more nicely, this warning may go away.</p>
+</div></div></p>
+<h2 id="filesystem">Filesystem</h2>
+<p><div class="panel panel-warning"><div class="panel-body" id="panel-5895790202"><p>This was just added in libstdc++ that comes with GCC 8, so this is not available to LHCb users yet.</p>
+</div></div></p>
+<p>The powerful Boost file system has finally made it into the standard library, after three revisions and promises every three years. This allows object oriented syntax for file manipulation, and works on Windows/Mac/Linux. However, it probably will not be integrated into libraries very quickly, requiring casting to C-style strings to be used. Should still be very useful. If you are familiar with Python&apos;s pathlib or a similar library, this will seem familiar.</p>
+<p>A simple example of the new filesystem:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> file_in_path = <span class="hljs-built_in">std</span>::filesystem::current_path() / <span class="hljs-string">&quot;file.txt&quot;</span>;
+file_in_path.replace_extension(<span class="hljs-string">&quot;.log&quot;</span>);
+<span class="hljs-keyword">if</span>(<span class="hljs-built_in">std</span>::filesystem::exists(file_in_path))
+    ...
+</code></pre>
+<p>Here we see that the <code>/</code> operator joins path segments, the paths have useful member functions, and the non-member functions can operate on the underlying filesystem. There exists a <a href="http://en.cppreference.com/w/cpp/filesystem" target="_blank">full set of filesystem operations</a>. Generally, any documentation you find for <code>Boost::filesystem</code> Version 3 should also be applicable.</p>
 <h2 id="assorted-standard-library-additions">Assorted standard library additions</h2>
 <p>There are a few smaller additions to the standard library too, like the addition of special math functions, <a href="http://en.cppreference.com/w/cpp/numeric/special_math" target="_blank">such as Bessel functions</a>. If you have ever needed to clamp a value between two
 limits, <code>std::clamp(value, min, max)</code> avoids nested min/max calls or duplication of the value. <code>std::lcm</code> and <code>std::gcd</code> have been added as mathematical functions, as well.</p>
 <p>A few new helper functions make dealing with generalized classes easier, including <code>std::invoke</code>, which can call any callable, <code>std::not_fn</code> which can negate any callable, and tuple&apos;s apply, which applies a tuple as arguments to a callable.</p>
 <p>Non-member versions of common tasks, <code>std::size</code>, <code>std::empty</code>, and <code>std::data</code> have been added to join the <code>std::begin</code> and <code>std::end</code> family.</p>
 <p>There are also a set of modifications to existing features, listed in the <a href="https://isocpp.org/files/papers/p0636r0.html" target="_blank">official document</a> that are too small to list here.</p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5723063168);" id="further-reading"><i class="fa fa-key"></i> Further reading<span id="heading-5723063168"></span></h3></div><div class="panel-body" id="panel-5723063168"><p>There are other changes that are either too small to discuss here, or are not likely to affect the average particle physicist. Like C++14, many of them polish the newer portions of the language. The <a href="https://isocpp.org/files/papers/p0636r0.html" target="_blank">official overview</a> is excellent. A very good overview can be found on <a href="http://stackoverflow.com/questions/38060436/what-are-the-new-features-in-c17" target="_blank">StackOverflow</a> while the standard is being finalized. Also see Herb Sutter&apos;s <a href="https://herbsutter.com/category/c/" target="_blank">site</a> for reports on the progress made at the C++ standards meetings.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6943882830);" id="further-reading"><i class="fa fa-key"></i> Further reading<span id="heading-6943882830"></span></h3></div><div class="panel-body" id="panel-6943882830"><p>There are other changes that are either too small to discuss here, or are not likely to affect the average particle physicist. Like C++14, many of them polish the newer portions of the language. The <a href="https://isocpp.org/files/papers/p0636r0.html" target="_blank">official overview</a> is excellent. A very good overview can be found on <a href="http://stackoverflow.com/questions/38060436/what-are-the-new-features-in-c17" target="_blank">StackOverflow</a>.</p>
+<p>Also see Herb Sutter&apos;s <a href="https://herbsutter.com/category/c/" target="_blank">site</a> for reports on the progress made at the C++ standards meetings for information about C++20 and beyond!</p>
 </div></div></p>
 
                                 
@@ -696,7 +722,7 @@ limits, <code>std::clamp(value, min, max)</code> avoids nested min/max calls or 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"What's new in C++17","level":"5.1.9.3","depth":3,"next":{"title":"Prospects in C++'s future","level":"5.1.9.4","depth":3,"path":"first-development-steps/05d-cppfuture.md","ref":"first-development-steps/05d-cppfuture.md","articles":[]},"previous":{"title":"What's new in C++14","level":"5.1.9.2","depth":3,"path":"first-development-steps/05b-cpp14.md","ref":"first-development-steps/05b-cpp14.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","katex-auto-render@git+https://github.com/lhcb/gitbook-plugin-katex-auto-render.git#master","collapsible-menu","otherlink","term"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-menu":{},"search":{},"otherlink":{},"term":{"copyButtons":true,"fade":true,"lineStyles":true,"prompt":"(?<prompt>[^\\$^#^:]*)(?<pathsep>:?)(?<path>[^\\$^#]*?)(?<delimiter>[\\$#] )(?<command>.*)$","style":"default"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-auto-render":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"The Starterkit team and contributors","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"first-development-steps/05c-cpp17.md","mtime":"2017-11-16T23:53:56.150Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-16T23:56:50.415Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"What's new in C++17","level":"5.1.10.3","depth":3,"next":{"title":"Prospects in C++'s future","level":"5.1.10.4","depth":3,"path":"first-development-steps/05d-cppfuture.md","ref":"first-development-steps/05d-cppfuture.md","articles":[]},"previous":{"title":"What's new in C++14","level":"5.1.10.2","depth":3,"path":"first-development-steps/05b-cpp14.md","ref":"first-development-steps/05b-cpp14.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","katex-auto-render@git+https://github.com/lhcb/gitbook-plugin-katex-auto-render.git#master","collapsible-menu","otherlink","term"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-menu":{},"search":{},"otherlink":{},"term":{"copyButtons":true,"fade":true,"lineStyles":true,"prompt":"(?<prompt>[^\\$^#^:]*)(?<pathsep>:?)(?<path>[^\\$^#]*?)(?<delimiter>[\\$#] )(?<command>.*)$","style":"default"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-auto-render":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"The Starterkit team and contributors","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"first-development-steps/05c-cpp17.md","mtime":"2018-06-29T08:27:11.468Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T08:28:45.709Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
