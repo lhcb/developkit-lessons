@@ -83,11 +83,16 @@ Several of the new libraries and features have been backported to Python 2. I'm 
 These are features that have been released in a version of Python after 3.0 that are not in the older Python 2 series:
 
 * Matrix multiplication operator, `@` (3.5)
-* Special `async` and `await` syntax for asynchronous operations (3.5)
+* Special `async` and `await` syntax for asynchronous operations (3.5, 3.7)
 * Unpacking improvements, so that the `*` and `**` operators work in more places like you'd expect (3.5)
 * Function signatures now in easy to use object (3.3)
-* Improvements to Windows support (Windows launcher, recent versions of Visual C++) (3.2, 3.4, 3.5, 3.6)
+* Improvements to Windows support (Windows launcher, recent versions of Visual C++) (3.2, 3.4, 3.5, 3.6, 3.7)
 * Delegation to a subgenerator, `yield from`, finally allows safe factorisation of generators (3.3)
+* Context variables and AsyncIO improvments, include a simple run function (3.7)
+* `importlib.resources`, which allows files that don't end in `.py` to be accessed (FINALLY!) (3.7, backports available)
+* `breakpoint()` built-in function for debugging (3.7)
+* Modules can have custom `__dir__` and `__getattr__` (3.7)
+* Lots of new debugging options in CPython for developers, like timing module import and better stacktraces (3.7)
 
 
 ### Formatted string literals (3.6)
@@ -114,15 +119,33 @@ will_be_a_str_later: str
 
 This stores the variable name and the annotation in an `__annotations__` dictionary for the module or the class that they are in.
 
-## Simi-ordered dictionaries (3.6)
+## Simi-ordered dictionaries (3.6 and 3.7)
 
 Python dictionaries are now partially ordered; due to huge speedups in the C definition of ordered dicts, the `dict` class is now guarantied to iterate in order as long as nothing has been changed since the `dict` creation. This may sound restrictive, but it enables many features; you can now discover the order keyword arguments were passed, the order class members were added, and the order of `{}` dicts. If you want to continue to  keep or control the order, you should move the `dict` to an
 `OrderedDict`, as before. This makes ordered dictionaries much easier to create, too.
 
 {% callout "Warning" %}
-Only class member order and keyword argument order are ensured by the language; the ordering of `{}` is an implementation detail. This detail works in both CPython 3.6 and all versions PyPy, however. This may become language mandated in the future.
+Only class member order and keyword argument order are ensured by the language; the ordering of `{}` is an implementation detail. This detail works in both CPython 3.6 and all versions PyPy, however. This became language mandated in Python 3.7.
 {% endcallout %}
 
+## DataClasses (3.7)
+
+Most programmers coming from other languages want some form of class designed to store data. Creation of these data-centric classes is verbose and ugly in python, since you hace to put all the setup in the `__init__` method rather than directly in the class like other languages, and you have to manage initilization, print, comparison, etc. yourself. Now, with DataClasses, you can do it with a nice syntax:
+
+```
+from dataclasses import dataclass
+
+@dataclass
+class Vector:
+    x: float
+    y: float
+    z: float
+```
+
+This will create (by default) `__init__`, `__repr__`, and `__eq__`. You can also ask for `order`, `unsafe_hash`, and `frozen`.
+
+This is similar to, and less powerful than, the popular attrs library (available for all versions of Python).
+This library module, like many others, was also backported to older versions of Python. However, the variable type annotations are not available in older versions.
 
 ### Other smaller features:
 
@@ -140,12 +163,13 @@ The current status of the python releases is as follows:
 
 * Python 2.5: Dead.
 * Python 2.6: Most libraries are dropping support, officially discontinued, but still on some legacy systems, like the default environment in SL6.
-* Python 2.7: The officially supported Python 2 release, critical security flaws fixed till roughly 2020. PyPy supports 2.7.10. Windows version is stuck requiring Visual Studio 2008 for builds.
+* Python 2.7: The officially supported Python 2 release, critical security flaws fixed till roughly 2020. PyPy supports 2.7.13. Windows version is stuck requiring Visual Studio 2008 for builds (Careful memory design can allow use of new VS)
 * Python 3.0-3.2: Never used significantly, no library support.
-    * Python 3.3: Better backwards compatibility makes this the first generally used Python 3, with Windows downloads [outpacing](http://ianozsvald.com/2013/04/15/more-python-3-3-downloads-than-python-2-7-for-past-3-months/) Python 2.7 for the first time. `u""` was added back in as a no-op. Note that PyPy3 is currently based on Python 3.3.5.
+* Python 3.3: Better backwards compatibility makes this the first generally used Python 3, with Windows downloads [outpacing](http://ianozsvald.com/2013/04/15/more-python-3-3-downloads-than-python-2-7-for-past-3-months/) Python 2.7 for the first time. `u""` was added back in as a no-op.
 * Python 3.4: Addition of asyncio features and pathlib provided even more interest.
-* Python 3.5: New features, such as matrix multiplication, are accelerating the transition from Python 2.
+* Python 3.5: New features, such as matrix multiplication, are accelerating the transition from Python 2. Note that PyPy3 is currently based on Python 3.5.3.
 * Python 3.6: The addition of format strings make simple scripts much easier and cleaner.
+* Python 3.7: Big performance improvements make this the fastest CPython ever; dataclasses, typing, and threading improvements.
 
 {% keypoints "Further reading" %}
 * [The old Python wiki page](https://wiki.python.org/moin/Python2orPython3)

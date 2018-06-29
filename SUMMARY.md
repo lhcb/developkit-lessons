@@ -31,6 +31,7 @@
     * [Intro to the Gaudi Framework](first-development-steps/02b-gaudi-intro.md)
     * [The Gaudi Framework](first-development-steps/03a-gaudi.md)
     * [Upgrading algorithms](first-development-steps/03b-upgrading.md)
+    * [New counters](first-development-steps/03c-counters.md)
     * [What's new in C++](first-development-steps/05-cpp.md)
       * [What's new in C++11](first-development-steps/05a-cpp11.md)
       * [What's new in C++14](first-development-steps/05b-cpp14.md)
