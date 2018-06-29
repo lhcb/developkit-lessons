@@ -13,7 +13,7 @@ The following setup is based on the Hackathon setup [here](https://gitlab.cern.c
 * Fuse: You should have a very recent version of Fuse (or OSXFuse on MacOS)
 * CVMFS: you should have access to /cvmfs/lhcb.cern.ch. On a Mac you will need [OSXFuse](http://osxfuse.github.io/) and [CernVM-FS](http://cernvm.cern.ch/portal/filesystem/cvmfs-2.3).
 
-{% discussion "Mounting cvmfs manually" %}
+{% discussion "Mounting CVMFS manually" %}
 
 If you want to mount CVMFS manually, such as for accessing it for other tasks, this is how you can do that:
 
@@ -57,10 +57,10 @@ This is also useful, since it keeps you from having to type a passphrase every t
 Then from the `hackathon` directory just created invoke:
 
 ```term
-local:hackathon $ ./lb-docker-run --home --ssh-agent --force-cvmfs
+local:hackathon $ ./lb-docker-run -c x86_64-centos7-gcc7-opt
 ```
 
-which will pull the latest image of the SLC6 Docker image we use to build our
+which will pull the latest image of the CentOS7 Docker image we use to build our
 software and start an interactive shell in the special directory `/workspace`,
 mapped to the local `hackathon` directory.
 
@@ -74,8 +74,8 @@ local:hackathon $ ./lb-docker-run -h
 
 The persistent home option used above may require that you own `/<username>` on your system as well.
  
-The `--force-cvmfs` will mount `/cvmfs` on your system, and is not needed if you already have it mounted.
-And the `--ssh-agent` option forwards your ssh identity to the container (if one was added).
+The `--ssh-agent` option forwards your ssh identity to the container (if one was added). You can
+also try the `--wrap` option to set up defaults differently, and to run in the same directory instead of `/workspace`.
 
 {% enddiscussion %}
 

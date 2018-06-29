@@ -16,16 +16,31 @@ local:~ $ sudo cvmfs_config setup
 Open the file `/etc/cvmfs/default.local` and add the lines:
 
 ```
-CVMFS_REPOSITORIES=lhcb.cern.ch,lhcbdev.cern.ch
 CVMFS_HTTP_PROXY=DIRECT
 CVMFS_QUOTA_LIMIT=25000
 ```
 
 Verify these are available with `cvmfs_config probe`. If not, restart with `sudo service autofs restart`.
 
+You also may need uuid on your system:
+
+```term
+local:~ $ sudo yum install uuid-devel libuuid-devel
+```
+
 You can run on CentOS 7 using:
 
 ```term
 local:~ $ source /cvmfs/lhcb.cern.ch/group_login.sh -c x86_64-centos7-gcc62-opt
 ```
+
+It is still recommended that you use the [Upgrade-hackathon-setup], and you can manually run:
+
+```
+local:upgrade-hackathon-setup $ . setup.sh
+```
+
+from that directory. You can now run `make -j1`, along with all the other make commands available to you. See [Upgrade-hackathon-setup].
+
+[Upgrade-hackathon-setup]: https://gitlab.cern.ch/lhcb/upgrade-hackathon-setup
 
