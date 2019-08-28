@@ -9,12 +9,9 @@ addons:
 before_install:
 - npm install gitbook-cli -g
 install:
+- gitbook fetch 3.2.3
 - gitbook install
 - npm install svgexport -g
-before_script:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- sleep 3
 script:
 - gitbook pdf
 - cp book.pdf developkit-lessons.pdf
